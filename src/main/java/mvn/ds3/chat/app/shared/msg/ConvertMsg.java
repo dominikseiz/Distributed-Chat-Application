@@ -25,7 +25,7 @@ public class ConvertMsg {
                 GetReply.class.getSimpleName(), GetReply.class,
                 GetMissingMsg.class.getSimpleName(), GetMissingMsg.class,
                 MsgLeaderElection.class.getSimpleName(), MsgLeaderElection.class,
-                MsgLeaderElection.class.getSimpleName(), MsgLeaderElection.class
+                MsgLeaderElected.class.getSimpleName(), MsgLeaderElected.class
         );
         var sequence = Map.of(MsgSequence.class.getSimpleName(), MsgSequence.class);
         var connected = new HashMap<String, Class<?>>();
