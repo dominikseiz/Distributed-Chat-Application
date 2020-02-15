@@ -6,7 +6,7 @@ public class GetReply extends Message {
 
     private int serverTCP;
 
-    public GetReply(@JsonProperty("serverTCP") int serverTCP) {
+    public GetReply(@JsonProperty("serverPort") int serverTCP) {
         super(GetReply.class.getSimpleName());
         this.serverTCP = serverTCP;
     }
