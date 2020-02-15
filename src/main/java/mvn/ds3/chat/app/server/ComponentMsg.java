@@ -15,7 +15,7 @@ public class ComponentMsg extends Message {
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
     public ComponentMsg(@JsonProperty("components") Set<Component> component,
-                         @JsonProperty("vClock") VectorClock vClock) {
+                         @JsonProperty("vectorClock") VectorClock vClock) {
         super(ComponentMsg.class.getSimpleName());
         this.components = component;
         this.vClock = vClock;

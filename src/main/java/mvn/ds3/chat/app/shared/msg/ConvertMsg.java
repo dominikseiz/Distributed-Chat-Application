@@ -37,12 +37,12 @@ public class ConvertMsg {
     public static Message deserializeMsg(String subject) {
         try {
             JsonNode jNode = objectMapper.readTree(subject);
-            JsonNode jType = jNode.path("type");
+            JsonNode jType = jNode.path("messageType");
             if (jType == null || jType.textValue() == null || jType.textValue().trim().isEmpty()) {
-                throw new IllegalArgumentException("The type attribute is needed.");
+                throw new IllegalArgumentException("The messageType attribute is needed.");
             }
             if (!messagesTypes.containsKey(jType.textValue())) {
-                throw new IllegalArgumentException("Type " + jType.textValue() + " is not recognised. Recorded types are: " + messagesTypes.keySet());
+                throw new IllegalArgumentException("messageType " + jType.textValue() + " is not recognised. Recorded types are: " + messagesTypes.keySet());
             }
             return (Message) objectMapper.treeToValue(jNode, messagesTypes.get(jType.textValue()));
         } catch (JsonProcessingException jpe) {

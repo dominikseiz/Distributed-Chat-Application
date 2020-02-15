@@ -8,7 +8,7 @@ import mvn.ds3.chat.app.shared.msg.Message;
 public class LinkAcknowledged extends Message {
     private final StateCluster cluster;
 
-    public LinkAcknowledged(@JsonProperty("cluster") StateCluster cluster) {
+    public LinkAcknowledged(@JsonProperty("stateOfCluster") StateCluster cluster) {
         super(LinkAcknowledged.class.getSimpleName());
         this.cluster = cluster;
     }

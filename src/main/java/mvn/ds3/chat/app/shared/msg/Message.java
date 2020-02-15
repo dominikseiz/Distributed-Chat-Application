@@ -1,14 +1,14 @@
 package mvn.ds3.chat.app.shared.msg;
 
 public abstract class Message {
-    private final String msgType;
+    private final String messageType;
 
     protected Message(String msgType) {
-        this.msgType = msgType;
+        this.messageType = msgType;
     }
 
     public String getMessageType() {
-        return msgType;
+        return messageType;
     }
 
 }
