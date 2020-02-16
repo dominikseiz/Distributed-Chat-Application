@@ -144,9 +144,9 @@ public class ComponentSupport implements ReceiverMulticast.MsgHandler, ServerTCP
             log.info("Sending GetMasterMsgReply over multicast.");
             publisher.broadcast(new GetReply(component.getTcpPort()));
             MsgChat last = state.get().getLastMessage();
-            if (last != null) {
-                publisher.broadcast(last);
-            }
+            // Send all chat history to the newly connected client
+            var  chatMessages = state.get().getMessages();
+            chatMessages.forEach((k,v) -> publisher.broadcast(v));
             return;
         }
         throw new UnsupportedOperationException("Type of message " + message.getMessageType() + " is not handled.");
