@@ -7,7 +7,7 @@ import mvn.ds3.chat.app.shared.msg.Message;
 public class MsgLeaderElected extends Message {
     private final String leaderId;
 
-    public MsgLeaderElected(@JsonProperty("leaderId") String leaderId) {
+    public MsgLeaderElected(@JsonProperty("electedLeaderId") String leaderId) {
         super(MsgLeaderElected.class.getSimpleName());
         this.leaderId = leaderId;
     }
