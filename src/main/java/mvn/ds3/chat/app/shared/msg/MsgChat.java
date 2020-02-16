@@ -11,7 +11,7 @@ public class MsgChat extends Message {
     private final VectorClock vClock;
 
     public MsgChat(@JsonProperty("sequence") Long sequence, @JsonProperty("text") String text, @JsonProperty("name") String name,
-                       @JsonProperty("vClock") VectorClock vClock) {
+                       @JsonProperty("vectorClock") VectorClock vClock) {
         super(MsgChat.class.getSimpleName());
         this.text = text;
         this.name = name;
